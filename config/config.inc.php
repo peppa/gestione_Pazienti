@@ -20,11 +20,11 @@ $config['smarty']['config_dir']= 'templates/configs';
 
 //MYSQL:
 //attivare per abilitare il debug del mysql
-$config['debug']=false;
+$config['debug']=FALSE;
 $config['mysql']['user'] = 'root';
 $config['mysql']['password'] = 'pippo';
 $config['mysql']['host'] = 'localhost';
-$config['mysql']['database'] = 'bookstore';
+$config['mysql']['database'] = 'clinica';
 
 //configurazione server smtp per invio email
 $config['smtp']['host'] = 'smtp.cheapnet.it';

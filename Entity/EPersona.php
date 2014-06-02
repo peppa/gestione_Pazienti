@@ -17,19 +17,19 @@
  */
 class EPersona {
     
-    private $nome;
-    private $cognome;
-    private $sesso; 
-    private $data_nascita;
-    private $codice_fiscale;
-    private $email;
-    private $telefono;
-    private $username;
-    private $password;
+    public $nome;
+    public $cognome;
+    public $sesso; 
+    public $data_nascita;
+    public $codice_fiscale;
+    public $email;
+    public $telefono;
+    public $username;
+    public $password;
     //3 attributi booleani per identificare il tipo di utente
-    private $medico;
-    private $dirigente;
-    private $paziente;
+    public $medico;
+    public $dirigente;
+    public $paziente;
     
      /**
      * @AssociationType Entity.EAppuntamento
@@ -54,7 +54,7 @@ class EPersona {
      * @param bool $pmedico Booleana. Se vera la persona è un medico
      * @param bool $pdirigente Booleana. Se vera la persona è un dirigente
      */
-    function __construct($pnome, $pcognome, $psesso, $pdata_nascita, $pemail, 
+    /**function __construct($pnome, $pcognome, $psesso, $pdata_nascita, $pemail, 
             $ptelefono, $pcodice_fiscale, $pusername, $ppasword, $ppaziente=TRUE, 
             $pmedico=FALSE, $pdirigente=FALSE) {
         
@@ -70,7 +70,7 @@ class EPersona {
         $this->medico=$pmedico;
         $this->paziente=$ppaziente;
         $this->dirigente=$pdirigente;
-    } 
+    } */
     
      
     
