@@ -12,7 +12,7 @@
  * EPersona. entità generica di una persona.
  *
  * @access public
- * @package EPersona
+ * @package Entity
  * @author Carlo
  */
 class EPersona {
