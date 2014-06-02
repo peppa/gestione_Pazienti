@@ -17,15 +17,15 @@
  */
 class EPersona {
     
-    private $nome;
-    private $cognome;
-    private $sesso; 
-    private $data_nascita;
-    private $codice_fiscale;
-    private $email;
-    private $telefono;
-    private $username;
-    private $password;
+    public $nome;
+    public $cognome;
+    public $sesso; 
+    public $data_nascita;
+    public $codice_fiscale;
+    public $email;
+    public $telefono;
+    public $username;
+    public $password;
     //3 attributi booleani per identificare il tipo di utente
     public $medico;
     public $dirigente;
