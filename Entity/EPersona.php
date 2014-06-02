@@ -3,6 +3,10 @@
 /*
  * File creato da Carlo Centofanti
  */
+/**
+ * @todo Bisogna sistemare la data di nascita con un tipo di dato opportuno...
+ * andrebbe usata per esempio il tipo date di php o un timestamp.
+ */
 
 /**
  * EPersona. entità generica di una persona.
@@ -34,18 +38,21 @@ class EPersona {
      */
     private $_appuntamento = array();
     
-    
-
+   
     /**
-     * costruttore di persona. deve avere tutti i campi
      * 
-     * @param string $pnome Il nome della persona
-     * @param string $pcognome Il cognome della persona
-     * @param string $psesso Il sesso della persona
-     * @param type $pdata_nascita La data di nascita della persona
-     * @param string $pemail L'email della persona
-     * @param string $ptelefono Il numero di telefono della persona
-     * @param string $pcodice_fiscale Il codice fiscale della persona
+     * @param type $pnome Il nome della persona
+     * @param type $pcognome Il cognome della persona
+     * @param type $psesso Il sesso della persona (Maschio/Femmina)
+     * @param type $pdata_nascita La data di nascita. Sarebbe da implementare nel formato corretto
+     * @param type $pemail l'email della persona
+     * @param type $ptelefono Il numero di telefono della persona
+     * @param type $pcodice_fiscale Il codice fiscale della persona. deve essere lungo 16 caratteri
+     * @param type $pusername L'username scelto dalla persona per il login
+     * @param type $ppasword La password scelta per il login.
+     * @param bool $ppaziente Booleana. Se vera la persona è un paziente
+     * @param bool $pmedico Booleana. Se vera la persona è un medico
+     * @param bool $pdirigente Booleana. Se vera la persona è un dirigente
      */
     function __construct($pnome, $pcognome, $psesso, $pdata_nascita, $pemail, 
             $ptelefono, $pcodice_fiscale, $pusername, $ppasword, $ppaziente=TRUE, 
