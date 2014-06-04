@@ -41,11 +41,24 @@ class CLogin {
                 $session=USingleton::getInstance('USession');
                 $session->imposta_valore('username',$pusername);
                 $session->imposta_valore('nome_cognome',$EPersona->getNome().' '.$EPersona->getCognome());
-                $session->imposta_valore('medico',$EPersona->isMedico());
-                $session->imposta_valore('paziente',$EPersona->isPaziente());
-                $session->imposta_valore('dirigente',$EPersona->isDirigente());
+                if ($EPersona->isMedico()){
+                    $session->imposta_valore('medico',TRUE);
+                    $tipoUtente="Medico";
+                }
+                elseif ($EPersona->isPaziente()) {
+                    $session->imposta_valore('paziente',TRUE());
+                    $tipoUtente="Paziente";
+                }
+                elseif ($EPersona->isDirigente()) {
+                    $session->imposta_valore('dirigente',TRUE);
+                    $tipoUtente="Dirigente";
+                }
                 
                 return true;
+            
+                
+                
+                
                 
             }else {// vuol dire che user e pwd non matchano il db
                 $this->_errore='Username o password errati';

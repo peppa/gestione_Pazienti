@@ -3,7 +3,6 @@ File creato da Carlo Centofanti
 -->
 
 <?php
-require_once 'lib/smarty/Smarty.class.php';
 require_once 'config/autoload.inc.php';
 require_once 'config/config.inc.php';
 
@@ -26,11 +25,11 @@ $smarty->display('login.tpl');
 //parte che va nella view
 if (isset($_REQUEST['username']))
     $username = $_REQUEST['username'];
-else $username="vuoto";
+else $username="";
 
 if (isset($_REQUEST['password']))
     $password = $_REQUEST['password'];
-else$password="vuoto";
+else$password="";
 
 if ($CLogin->autentica($username, $password))
         echo "autenticato";

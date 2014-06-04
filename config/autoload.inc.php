@@ -25,6 +25,10 @@ function __autoload($class_name) {
             break;
         case 'U':
             require_once ('Foundation/Utility/'.$class_name.'.php');
+            break;
+        case 'S':
+            require_once ('lib/smarty/Smarty.class.php'); 
+            break;
     }
 }
 

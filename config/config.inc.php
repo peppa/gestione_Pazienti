@@ -20,7 +20,7 @@ $config['smarty']['config_dir']= 'templates/configs';
 
 //MYSQL:
 //attivare per abilitare il debug del mysql
-$config['debug']=FALSE;
+$config['debug']=TRUE;
 $config['mysql']['user'] = 'root';
 $config['mysql']['password'] = 'pippo';
 $config['mysql']['host'] = 'localhost';
