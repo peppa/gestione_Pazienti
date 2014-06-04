@@ -8,6 +8,7 @@
  * @todo La funzione autentica dovrà restituire non solo TRUE o FALSE ma anche
  * il tipo di utente che si è loggato (medico, paziente ecc) per consentire il corretto
  * smistamento tra le pagine.
+ * @todo inserire il get $_errore
  */
 
 /**
@@ -18,8 +19,7 @@
  * @author Carlo
  */
 class CLogin {
-    private $_username;
-    private $_password;
+    private $_errore;
     
     /**
      * Autentica confronta un username ed una password con quelli nel database.
@@ -45,20 +45,17 @@ class CLogin {
                     $session->imposta_valore('medico',TRUE);
                     $tipoUtente="Medico";
                 }
-                elseif ($EPersona->isPaziente()) {
-                    $session->imposta_valore('paziente',TRUE());
+                if ($EPersona->isPaziente()) {
+                    $session->imposta_valore('paziente',TRUE);
                     $tipoUtente="Paziente";
                 }
-                elseif ($EPersona->isDirigente()) {
+                if ($EPersona->isDirigente()) {
                     $session->imposta_valore('dirigente',TRUE);
                     $tipoUtente="Dirigente";
                 }
-                
-                return true;
+                print"sto a ritornare true perchè ha loggato";
+                return TRUE;
             
-                
-                
-                
                 
             }else {// vuol dire che user e pwd non matchano il db
                 $this->_errore='Username o password errati';
@@ -71,6 +68,12 @@ class CLogin {
         
         return false;
        
+    }
+    
+    public function logout(){
+        $session=USingleton::getInstance('USession');
+        $session->cancella_sessione();
+        
     }
 }
 

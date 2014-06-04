@@ -20,20 +20,25 @@ $smarty->caching = false;
 
 
 
+    
+$session=USingleton::getInstance('Usession');
+if(!$session->leggi_valore('username')){
+    
+    //parte che va nella view
+    if (isset($_REQUEST['username']))
+        $username = $_REQUEST['username'];
+    else $username="";
+
+    if (isset($_REQUEST['password']))
+        $password = $_REQUEST['password'];
+    else$password="";
+
+    if ($CLogin->autentica($username, $password))
+            $smarty->assign ( 'messaggio',"autenticato tramite login");
+    else$smarty->assign ('messaggio', "non autenticato :("); //ci va l'errore recuperato da clogin mediante get
+}else $smarty->assign ('messaggio','autenticato tramite sessione :)');    
+    
 $smarty->display('login.tpl');
 
-//parte che va nella view
-if (isset($_REQUEST['username']))
-    $username = $_REQUEST['username'];
-else $username="";
-
-if (isset($_REQUEST['password']))
-    $password = $_REQUEST['password'];
-else$password="";
-
-if ($CLogin->autentica($username, $password))
-        echo "autenticato";
-else echo "non autenticato :(";
-        
 ?>
 

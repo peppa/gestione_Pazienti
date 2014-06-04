@@ -1,7 +1,7 @@
 <?php
 /**
  * @access public
- * @author Alessandro Verzicco
+ * @author Alessandro Verzicco, modded by Carlo Centofanti, Giulio Carducci
  * @package System
  */
 class USession {
@@ -20,6 +20,9 @@ class USession {
             return $_SESSION[$chiave];
         else
             return false;
+    }
+    function cancella_sessione() {
+        session_destroy();
     }
 }
 ?>

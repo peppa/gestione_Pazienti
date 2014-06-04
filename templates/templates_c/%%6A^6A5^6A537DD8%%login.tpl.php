@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-06-03 01:57:54
+<?php /* Smarty version 2.6.26, created on 2014-06-04 12:42:45
          compiled from login.tpl */ ?>
         <a id="anchor-login-4"></a>
         <div class="corner-subcontent-top"></div>
@@ -20,6 +20,8 @@
               <p><input type="checkbox" name="checkbox" id="checkbox" class="checkbox" tabindex="3" size="1" value="" /><label for="checkbox" class="right">Ricordati?</label></p>
               <p><input type="submit" name="cmdweblogin" class="button" value="LOGIN"  /></p>
               <p><a href="?controller=autenticazione&task=password_dimenticata" id="forgotpsswd">Password dimenticata?</a></p>
+              <p><?php echo $this->_tpl_vars['messaggio']; ?>
+</p>
             </fieldset>
             </form>
           </div>

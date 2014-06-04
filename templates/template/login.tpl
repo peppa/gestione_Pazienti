@@ -17,6 +17,8 @@
               <p><input type="checkbox" name="checkbox" id="checkbox" class="checkbox" tabindex="3" size="1" value="" /><label for="checkbox" class="right">Ricordati?</label></p>
               <p><input type="submit" name="cmdweblogin" class="button" value="LOGIN"  /></p>
               <p><a href="?controller=autenticazione&task=password_dimenticata" id="forgotpsswd">Password dimenticata?</a></p>
+              <p>{$messaggio}</p>
+              
             </fieldset>
             </form>
           </div>
