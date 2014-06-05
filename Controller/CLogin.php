@@ -53,7 +53,6 @@ class CLogin {
                     $session->imposta_valore('dirigente',TRUE);
                     $tipoUtente="Dirigente";
                 }
-                print"sto a ritornare true perchè ha loggato";
                 return TRUE;
             
                 
