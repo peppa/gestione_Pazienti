@@ -21,7 +21,7 @@ $smarty->caching = false;
 
 
     
-$session=USingleton::getInstance('Usession');
+$session=USingleton::getInstance('USession');
 if(!$session->leggi_valore('username')){
     
     //parte che va nella view
