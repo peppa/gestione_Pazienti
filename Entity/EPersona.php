@@ -28,7 +28,6 @@ class EPersona {
     public $password;
     //3 attributi booleani per identificare il tipo di utente
     public $medico;
-    public $dirigente;
     public $paziente;
     
      /**
@@ -38,41 +37,6 @@ class EPersona {
      */
     private $_appuntamento = array();
     
-   
-    /**
-     * 
-     * @param type $pnome Il nome della persona
-     * @param type $pcognome Il cognome della persona
-     * @param type $psesso Il sesso della persona (Maschio/Femmina)
-     * @param type $pdata_nascita La data di nascita. Sarebbe da implementare nel formato corretto
-     * @param type $pemail l'email della persona
-     * @param type $ptelefono Il numero di telefono della persona
-     * @param type $pcodice_fiscale Il codice fiscale della persona. deve essere lungo 16 caratteri
-     * @param type $pusername L'username scelto dalla persona per il login
-     * @param type $ppasword La password scelta per il login.
-     * @param bool $ppaziente Booleana. Se vera la persona è un paziente
-     * @param bool $pmedico Booleana. Se vera la persona è un medico
-     * @param bool $pdirigente Booleana. Se vera la persona è un dirigente
-     */
-    /**function __construct($pnome, $pcognome, $psesso, $pdata_nascita, $pemail, 
-            $ptelefono, $pcodice_fiscale, $pusername, $ppasword, $ppaziente=TRUE, 
-            $pmedico=FALSE, $pdirigente=FALSE) {
-        
-        $this->nome=$pnome;
-        $this->cognome=$pcognome;
-        $this->sesso=$psesso;
-        $this->data_nascita=$pdata_nascita;
-        $this->email=$pemail;
-        $this->telefono=$ptelefono;
-        $this->codice_fiscale=$pcodice_fiscale;
-        $this->username=$pusername;
-        $this->password=$ppasword;
-        $this->medico=$pmedico;
-        $this->paziente=$ppaziente;
-        $this->dirigente=$pdirigente;
-    } */
-    
-     
     
       //metodi:
     
@@ -139,9 +103,6 @@ class EPersona {
     public function isPaziente(){
         return $this->paziente;
     }
-    public function isDirigente(){
-        return $this->dirigente;
-    }
 
 
 
@@ -181,10 +142,6 @@ class EPersona {
     public function togglePaziente(){
         if ($this->paziente) $this->paziente=FALSE;
         else $this->paziente=TRUE;
-    }
-    public function toggleDirigente(){
-        if ($this->dirigente) $this->dirigente=FALSE;
-        else $this->dirigente=TRUE;
     }
 }
 

@@ -49,10 +49,6 @@ class CLogin {
                     $session->imposta_valore('paziente',TRUE);
                     $tipoUtente="Paziente";
                 }
-                if ($EPersona->isDirigente()) {
-                    $session->imposta_valore('dirigente',TRUE);
-                    $tipoUtente="Dirigente";
-                }
                 return TRUE;
             
                 
