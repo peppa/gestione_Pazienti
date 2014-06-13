@@ -7,7 +7,7 @@ require_once 'config/autoload.inc.php';
 require_once 'config/config.inc.php';
 
 
-$CLogin=new CLogin();
+$CLogin=  USingleton::getInstance('CLogin');
 $smarty= new Smarty();
 
 global $config;
