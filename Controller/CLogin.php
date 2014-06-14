@@ -20,6 +20,7 @@
  */
 class CLogin {
     private $_errore;
+    private $loggato;
     
     /**
      * Autentica confronta un username ed una password con quelli nel database.
@@ -31,8 +32,8 @@ class CLogin {
      * @return boolean
      */
     public function autentica( $pusername, $ppassword){
-        //inizializzo la connessione al db creando un oggetto FPersona
-        $FPersona = new FPersona();
+        //inizializzo/ottengo la connessione al db prendendo l'istanza di FPersona
+        $FPersona = USingleton::getInstance('FPersona');
         //recupero dal db l'entità corrispondente all'username
         $EPersona =$FPersona->load($pusername);
         //verifico che sia stata trovata
@@ -64,12 +65,50 @@ class CLogin {
         return false;
        
     }
-    
+    public function login() {
+        $Session = USingleton::getInstance("USession");
+        if (!$Session->leggi_valore('username')){
+            $VLogin=  USingleton::getInstance('VLogin');
+            $user=$VLogin->getUsername();
+            $pass=$VLogin->getPassword();
+            return $this->autentica($user, $pass);
+        }else return TRUE; 
+    }
+    public function isAutenticato(){
+        $Session=  USingleton::getInstance('USession');
+        if ($Session->leggi_valore('username')){
+            return TRUE;            
+        }else return FALSE;
+    }
+    /**
+     * Effettua il logout
+     */
     public function logout(){
         $session=USingleton::getInstance('USession');
         $session->cancella_sessione();
+        return TRUE;
+    }
+    
+    public function smista(){
+        $VLogin=USingleton::getInstance('VLogin');
+        $Session=USingleton::getInstance('USession');
+        
+        switch ($VLogin->getTask()) {
+            case 'LOGIN':
+                return $this->login();
+                
+            
+            case 'LOGOUT':
+                return $this->logout();
+                
+
+
+            default:
+                return $this->isAutenticato();
+        }
         
     }
+    
 }
 
 ?>

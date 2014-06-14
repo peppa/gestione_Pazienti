@@ -17,6 +17,7 @@ $config['smarty']['template_dir'] = 'templates/template/';
 $config['smarty']['compile_dir'] = 'templates/templates_c/';
 $config['smarty']['cache_dir']= 'templates/cache';
 $config['smarty']['config_dir']= 'templates/configs';
+$config['smarty']['caching']=FALSE;
 
 //MYSQL:
 //attivare per abilitare il debug del mysql
@@ -29,7 +30,7 @@ $config['mysql']['database'] = 'clinica';
 //configurazione server smtp per invio email
 $config['smtp']['host'] = 'smtp.cheapnet.it';
 $config['smtp']['port'] = '25';
-$config['smtp']['smtpauth'] = false;
+$config['smtp']['smtpauth'] = FALSE;
 $config['smtp']['username'] = '';
 $config['smtp']['password'] = '';
 
