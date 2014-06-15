@@ -14,7 +14,15 @@
 class CHome {
     
     //sta classe è da completa mano mano...
-    public function impostaPagina(){
+    public function impostaPagina(){ 
+        //controlla se l'utente è un medico, paziente, non registrato 
+        $sessione=USingleton::getInstance("USession");
+        $sessione=new USession();
+        if ($sessione->leggi_valore("medico")==1) { /*carica pag medico  */}
+            elseif ($sessione->leggi_valore("paziente")==1) { /*carica pag paziente */}
+        else {/*carica pag non registrato*/}
+        
+        
         
     }
 }
