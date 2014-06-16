@@ -38,7 +38,7 @@ class CLogin {
         $EPersona =$FPersona->load($pusername);
         //verifico che sia stata trovata
         if($EPersona){
-            if($ppassword == $EPersona->getPassword()){
+            if($EPersona->matchWithPassword($ppassword)){
                 $session=USingleton::getInstance('USession');
                 $session->imposta_valore('username',$pusername);
                 $session->imposta_valore('nome_cognome',$EPersona->getNome().' '.$EPersona->getCognome());
