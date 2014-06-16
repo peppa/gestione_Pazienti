@@ -103,6 +103,17 @@ class EPersona {
     public function isPaziente(){
         return $this->paziente;
     }
+    /**
+     * Restituisce TRUE se la password matcha con l'entità, altrimenti FALSE
+     * 
+     * @param string $ppassword la pasword da matchare
+     * @return boolean TRUE: Password corretta. FALSE: altrimenti
+     */
+    public function matchWithPassword( $ppassword){
+        if (md5($ppassword) == $this->password)
+            return TRUE;
+        else return FALSE;
+    }
 
 
 
