@@ -29,7 +29,7 @@
     </header>
     
     <div id="site_content">
-      
+      {$contenuto}
     </div>
       
        <footer> <!--
