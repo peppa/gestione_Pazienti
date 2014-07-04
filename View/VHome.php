@@ -9,17 +9,19 @@
 class VHome extends View{
     
     private $htmlCentrale;
-    private $boxlogin;
+    private $_boxlogin;
     
     public function aggiungiLogin(){
         $VLogin=  USingleton::getInstance("VLogin");
         $VLogin=new VLogin();
         
-        return $this->htmlCentrale=$VLogin->processaTemplate();
+        $this->_boxlogin=$VLogin->processaTemplate();
+        
+        
     }
     
     public function impostaPaginaNonRegistrato() {
-        $this->boxlogin=$this->aggiungiLogin();
+        $this->aggiungiLogin();
     }
     
     public function impostaPaginaMedico() {
@@ -31,7 +33,9 @@ class VHome extends View{
     }
     
     public function mostraPagina() {
-        $this->display("empty.tpl");
+        $this->assign('contenuto', $this->_boxlogin );
+        
+        $this->display("template_vuoto.tpl");
         
     }
     
