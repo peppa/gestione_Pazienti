@@ -9,23 +9,24 @@
 class VHome extends View{
     
     private $htmlCentrale;
+    private $boxlogin;
     
     public function aggiungiLogin(){
         $VLogin=  USingleton::getInstance("VLogin");
         $VLogin=new VLogin();
         
-        $this->htmlCentrale=$VLogin->processaTemplate();
+        return $this->htmlCentrale=$VLogin->processaTemplate();
     }
     
-    public function caricaPaginaNonRegistrato() {
+    public function impostaPaginaNonRegistrato() {
+        $this->boxlogin=$this->aggiungiLogin();
+    }
+    
+    public function impostaPaginaMedico() {
         
     }
     
-    public function caricaPaginaMedico() {
-        
-    }
-    
-    public function caricaPaginaPaziente() {
+    public function impostaPaginaPaziente() {
         
     }
     

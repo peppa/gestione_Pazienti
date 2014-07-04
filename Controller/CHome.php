@@ -26,7 +26,7 @@ class CHome {
         if ($sessione->leggi_valore("medico")==TRUE) { /*carica pag medico  */}
             elseif ($sessione->leggi_valore("paziente")==TRUE) { /*carica pag paziente */}
         else {
-            $VHome->caricaPaginaNonRegistrato();
+            $VHome->impostaPaginaNonRegistrato();
         }
         
         
