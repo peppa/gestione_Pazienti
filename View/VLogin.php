@@ -36,18 +36,7 @@ class VLogin extends View {
         else
             return false;
     }
-    
-    /**
-     * Restituisce il controllore
-     * @return mixed
-     */
-    public function getController() {
-        if (isset($_REQUEST['controller']))
-            return $_REQUEST['controller'];
-        else
-            return false;
-    }
-    
+        
     /**
      * Restituisce il codice html estratto dal template del login
      * @return string

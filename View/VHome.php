@@ -8,6 +8,15 @@
 
 class VHome extends View{
     
+    private $htmlCentrale;
+    
+    public function aggiungiLogin(){
+        $VLogin=  USingleton::getInstance("VLogin");
+        $VLogin=new VLogin();
+        
+        $this->htmlCentrale=$VLogin->processaTemplate();
+    }
+    
     public function caricaPaginaNonRegistrato() {
         
     }
@@ -20,7 +29,7 @@ class VHome extends View{
         
     }
     
-    public function mostraPaginaFinale() {
+    public function mostraPagina() {
         $this->display("template_vuoto.tpl");
         
     }

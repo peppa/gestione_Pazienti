@@ -24,5 +24,15 @@ class View extends Smarty {
         else
             return false;
     }
+    /**
+     * Restituisce il controllore
+     * @return mixed
+     */
+    public function getController() {
+        if (isset($_REQUEST['controller']))
+            return $_REQUEST['controller'];
+        else
+            return false;
+    }
 }
 ?>
