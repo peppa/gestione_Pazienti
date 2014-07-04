@@ -22,8 +22,9 @@ body {
   font: normal .85em arial, sans-serif;
   background: #222 url(../images/url.jpg);
   background-size: cover;
-  color: #BBB;
+  color: black;
   padding-bottom: 40px;
+  padding-top: 25px;
 }
 
 p { 
@@ -57,7 +58,7 @@ h4, h5, h6 {
   margin: 0;
   padding: 0 0 5px 0;
   font: normal 110% arial, sans-serif;
-  color: #BBB;
+  color: black;
   line-height: 1.5em;
 }
 
@@ -103,16 +104,24 @@ ol li {
 #main, header, #logo, nav, #site_content, footer { 
   margin-left: auto; 
   margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #main { 
-  width: 950px;
-  margin: 20px auto 0 auto;
+  width: 1250px;
+  margin-left: auto; 
+  margin-right: auto;
 }
 
 header { 
-  width: 950px;
-  height: 105px;
+  width: 1250px;
+  height: 110px;
+  border-style: hidden;
+  border-color: black;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: black;
 }
 
 #logo { 
@@ -149,11 +158,12 @@ nav {
 } 
 
 #site_content { 
-  width: 950px;
+  width: 1250px;
   overflow: hidden;
-  margin: 4px auto 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
-  background: #333;
+  background: lightslategray;
   border-top: 0;
   border-bottom: 0;
 } 
@@ -207,7 +217,7 @@ nav {
   text-align: center;
   margin: 0;
   padding: 4px 0 0 0;
-  color: #FFF;
+  color: black;
 }
   
 .blog h3 {
@@ -215,17 +225,23 @@ nav {
   text-shadow: none;
   margin: -15px 0 0 0;
   text-align: center;
-  color: #222;
+  color: black;
 }
 
 footer { 
-  width: 950px;
+  width: 1250px;
   font: normal 140% 'News Cycle',  arial, sans-serif;
   height: 90px;
   padding: 20px 0 5px 0;
   text-align: center; 
-  color: #FFF;
+  color: black;
   background: #444;
+  
+  border-style: hidden;
+  border-color: black;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #444;
 }
 
 footer p { 
@@ -341,7 +357,7 @@ ul img {
   padding: 15px 5px 15px 0;
   margin: 10px 0 0 0;
   overflow: hidden;
-  float: right;
+  float: left;
 }
 
 .lavaLampWithImage li {
