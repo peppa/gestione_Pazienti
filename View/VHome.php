@@ -31,7 +31,7 @@ class VHome extends View{
     }
     
     public function mostraPagina() {
-        $this->display("template_vuoto.tpl");
+        $this->display("empty.tpl");
         
     }
     
