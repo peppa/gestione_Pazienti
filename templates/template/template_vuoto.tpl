@@ -30,7 +30,7 @@
     </header>
     
     <div id="site_content">
-      
+      {$contenuto}
     </div>
          <!--
         <p><h4>This standards compliant, fixed width website template is released as an 'open source' design (under a <a href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from css3templates.co.uk' link in the footer of the template.</p>

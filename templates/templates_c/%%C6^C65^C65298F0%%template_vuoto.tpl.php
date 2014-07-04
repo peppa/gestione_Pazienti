@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-07-04 18:27:48
+<?php /* Smarty version 2.6.26, created on 2014-07-04 18:46:44
          compiled from template_vuoto.tpl */ ?>
 <!DOCTYPE HTML>
 <html>
@@ -32,7 +32,8 @@
     </header>
     
     <div id="site_content">
-      
+      <?php echo $this->_tpl_vars['contenuto']; ?>
+
     </div>
          <!--
         <p><h4>This standards compliant, fixed width website template is released as an 'open source' design (under a <a href="http://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 Licence</a>), which means that you are free to use it for anything you want (including modifying and amending it). All I ask is that you leave the 'design from css3templates.co.uk' link in the footer of the template.</p>
