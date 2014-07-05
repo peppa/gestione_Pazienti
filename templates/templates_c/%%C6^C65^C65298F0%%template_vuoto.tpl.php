@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-07-05 17:48:24
+<?php /* Smarty version 2.6.26, created on 2014-07-05 18:07:08
          compiled from template_vuoto.tpl */ ?>
 <!DOCTYPE HTML>
 <html>
@@ -74,6 +74,7 @@
   <script type="text/javascript" src="js/jquery.easing.min.js"></script>
   <script type="text/javascript" src="js/jquery.lavalamp.min.js"></script>
   <script type="text/javascript" src="js/image_fade.js"></script>
+  <script type="text/javascript" src='js/focusMenu.js'></script>
  //manca il lavalamp
   
 </body>
