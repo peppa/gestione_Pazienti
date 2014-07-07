@@ -29,7 +29,7 @@ class CLogin {
      * 
      * @param string $pusername l'username che richiede il login
      * @param string $ppassword la password fornita dall'utente che vuole loggare
-     * @return boolean
+     * @return boolean TRUE se l'autenticazione ha avuto successo, FALSE altrimenti
      */
     public function autentica( $pusername, $ppassword){
         //inizializzo/ottengo la connessione al db prendendo l'istanza di FPersona
@@ -65,15 +65,27 @@ class CLogin {
         return false;
        
     }
+    /**
+     * recupera gli user e pwd passati dal form e procede ad autenticarli.
+     * 
+     * 
+     * @return boolean TRUE se l'utente è autenticato, FALSE altrimenti
+     */
     public function login() {
         $Session = USingleton::getInstance("USession");
-        if (!$Session->leggi_valore('username')){
+        if (!$this->isAutenticato()){
             $VLogin=  USingleton::getInstance('VLogin');
             $user=$VLogin->getUsername();
             $pass=$VLogin->getPassword();
             return $this->autentica($user, $pass);
         }else return TRUE; 
     }
+    
+    /**
+     * Verifica se l'utente si è già autenticato
+     * 
+     * @return boolean
+     */
     public function isAutenticato(){
         $Session=  USingleton::getInstance('USession');
         if ($Session->leggi_valore('username')){
@@ -89,6 +101,13 @@ class CLogin {
         return TRUE;
     }
     
+    
+    /**
+     * Smista le richieste che arrivano al controllore mediante la task passata
+     * nell'url
+     * 
+     * @return type
+     */
     public function smista(){
         $VLogin=USingleton::getInstance('VLogin');
         $Session=USingleton::getInstance('USession');

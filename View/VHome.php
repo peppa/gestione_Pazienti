@@ -9,13 +9,13 @@
 class VHome extends View{
     
     private $htmlCentrale;
-    private $_boxlogin;
+    private $boxLogin;
     
     public function aggiungiLogin(){
         $VLogin=  USingleton::getInstance("VLogin");
         $VLogin=new VLogin();
         
-        $this->_boxlogin=$VLogin->processaTemplate();
+        $this->boxLogin=$VLogin->processaTemplate();
         
         
     }
@@ -33,7 +33,7 @@ class VHome extends View{
     }
     
     public function mostraPagina() {
-        $this->assign('contenuto', $this->_boxlogin );
+        $this->assign('contenuto', $this->boxLogin );
         
         $this->display("template_vuoto.tpl");
         

@@ -24,24 +24,25 @@
         </div>
         <div class="corner-subcontent-bottom"></div>
         -->
-        
+        <form method="post" action="index.php?controller=clogin">
         <div id="lol">
         <!--<h1>Welcome to My Portfolio</h1> -->
         <div id="logo" ><img class="small" src="images/img1.gif" /></div>
         <div id="dati">
         <table>
           <tr>
-            <td id="textform"> <input id="input" type="text" name="user" placeholder="Username"/> </td>
+            <td id="textform"> <input id="input" type="text" name="username" id="username" placeholder="Username"/> </td>
           </tr>
 
           <tr>
-            <td id="textform"> <input id="input" type="password" name="pwd" placeholder="Password"/> </td>
+            <td id="textform"> <input id="input" type="password" name="password" placeholder="Password"/> </td>
           </tr>
 
           <tr>
-            <td> <input id="button" type="submit" value="LOGIN" /> </td>
+            <td> <input id="button" name="task" type="submit" value="LOGIN" /> </td>
           </tr>
 
         </table>
       </div>
     </div>
+            </form>

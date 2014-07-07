@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-07-04 18:32:29
+<?php /* Smarty version 2.6.26, created on 2014-07-07 11:14:45
          compiled from login.tpl */ ?>
         <!--<a id="anchor-login-4"></a>
         <div class="corner-subcontent-top"></div>
@@ -28,24 +28,25 @@
         </div>
         <div class="corner-subcontent-bottom"></div>
         -->
-        
+        <form method="post" action="index.php?controller=clogin">
         <div id="lol">
         <!--<h1>Welcome to My Portfolio</h1> -->
         <div id="logo" ><img class="small" src="images/img1.gif" /></div>
         <div id="dati">
         <table>
           <tr>
-            <td id="textform"> <input id="input" type="text" name="user" placeholder="Username"/> </td>
+            <td id="textform"> <input id="input" type="text" name="username" id="username" placeholder="Username"/> </td>
           </tr>
 
           <tr>
-            <td id="textform"> <input id="input" type="password" name="pwd" placeholder="Password"/> </td>
+            <td id="textform"> <input id="input" type="password" name="password" placeholder="Password"/> </td>
           </tr>
 
           <tr>
-            <td> <input id="button" type="submit" value="LOGIN" /> </td>
+            <td> <input id="button" name="task" type="submit" value="LOGIN" /> </td>
           </tr>
 
         </table>
       </div>
     </div>
+            </form>

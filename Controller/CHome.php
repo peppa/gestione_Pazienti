@@ -41,14 +41,15 @@ class CHome {
         $view=new VHome(); //riga da rimuovere
         
         $controllore=$view->getController();
+        var_dump($controllore);
         
         switch ($controllore) {
-            case 'LOGIN':
-
-
-                break;
+            case 'clogin':
+                $CLogin=  USingleton::getInstance('CLogin');
+                return $CLogin->smista();
 
             default:
+                echo"c'è qualcosa che non va ";
                 break;
         }
         
