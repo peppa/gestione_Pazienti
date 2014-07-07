@@ -41,7 +41,7 @@ class CHome {
         $view=new VHome(); //riga da rimuovere
         
         $controllore=$view->getController();
-        var_dump($controllore);
+       
         
         switch ($controllore) {
             case 'clogin':
@@ -49,7 +49,7 @@ class CHome {
                 return $CLogin->smista();
 
             default:
-                echo"c'è qualcosa che non va ";
+                echo"è partito il caso di default dello switch su CHome";
                 break;
         }
         
