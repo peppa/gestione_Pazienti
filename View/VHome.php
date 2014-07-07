@@ -13,11 +13,9 @@ class VHome extends View{
     
     public function aggiungiLogin(){
         $VLogin=  USingleton::getInstance("VLogin");
-        $VLogin=new VLogin();
+        //$VLogin=new VLogin(); //da eliminare
         
         $this->boxLogin=$VLogin->processaTemplate();
-        
-        
     }
     
     public function impostaPaginaNonRegistrato() {
@@ -33,7 +31,7 @@ class VHome extends View{
     }
     
     public function mostraPagina() {
-        $this->assign('contenuto', $this->boxLogin );
+        $this->assign('boxLogin', $this->boxLogin );
         
         $this->display("template_vuoto.tpl");
         

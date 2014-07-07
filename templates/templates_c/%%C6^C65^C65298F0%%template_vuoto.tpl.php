@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2014-07-05 18:07:08
+<?php /* Smarty version 2.6.26, created on 2014-07-07 17:51:36
          compiled from template_vuoto.tpl */ ?>
 <!DOCTYPE HTML>
 <html>
@@ -32,7 +32,7 @@
     </header>
     
     <div id="site_content">
-      <?php echo $this->_tpl_vars['contenuto']; ?>
+      <?php echo $this->_tpl_vars['boxLogin']; ?>
 
     </div>
          <!--

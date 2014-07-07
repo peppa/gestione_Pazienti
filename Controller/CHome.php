@@ -25,11 +25,11 @@ class CHome {
         
         
         $contenutoHTML= $this->smista();//qui gli deve arrivare codice html da mettere come contenuto principale
-        var_dump($contenutoHTML);
+        var_dump($contenutoHTML);//da eliminare
         if ($CLogin->isMedico()) { echo"io carico la pagina del medico";/*carica pag medico  */}
         if ($CLogin->isPaziente()) {echo"io carico la pagina del paziente"; /*carica pag paziente */}
         if (!$CLogin->isAutenticato()) {
-            echo"io carico la pagina del non registrato";
+            echo"io carico la pagina del non registrato";//da eliminare
             $VHome->impostaPaginaNonRegistrato();
         }        
     }
