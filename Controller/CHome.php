@@ -18,24 +18,37 @@ class CHome {
         //controlla se l'utente è un medico, paziente, non registrato 
         $sessione=USingleton::getInstance("USession");
         $VHome=  USingleton::getInstance("VHome");
-        //$VHome=new VHome();//da cancellare
+        $CLogin =  USingleton::getInstance("CLogin");
+        //$CLogin= new CLogin();
+        //$VHome=new VHome();//da eliminare
         //$sessione=new USession();// riga da eliminare
         
         
         $contenutoHTML= $this->smista();//qui gli deve arrivare codice html da mettere come contenuto principale
-        if ($sessione->leggi_valore("medico")==TRUE) { /*carica pag medico  */}
-            elseif ($sessione->leggi_valore("paziente")==TRUE) { /*carica pag paziente */}
-        else {
+        var_dump($contenutoHTML);
+        if ($CLogin->isMedico()) { echo"io carico la pagina del medico";/*carica pag medico  */}
+        if ($CLogin->isPaziente()) {echo"io carico la pagina del paziente"; /*carica pag paziente */}
+        if (!$CLogin->isAutenticato()) {
+            echo"io carico la pagina del non registrato";
             $VHome->impostaPaginaNonRegistrato();
         }        
     }
     
+    /**
+     * Visualizza la pagina impostata fin ora
+     * 
+     */
     public function visualizzaPagina(){
         $this->impostaPagina();
         $VHome=  USingleton::getInstance('VHome');
         $VHome->mostraPagina();
     }
     
+    /**
+     * Si occupa di smistare i compiti ai vari controlliri
+     * 
+     * @return type
+     */
     public function smista() {
         $view=  USingleton::getInstance('VHome');
         $view=new VHome(); //riga da rimuovere

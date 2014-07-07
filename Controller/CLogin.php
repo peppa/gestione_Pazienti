@@ -21,6 +21,8 @@
 class CLogin {
     private $_errore;
     private $loggato;
+    private $isMedico;
+    private $isPaziente;
     
     /**
      * Autentica confronta un username ed una password con quelli nel database.
@@ -44,11 +46,11 @@ class CLogin {
                 $session->imposta_valore('nome_cognome',$EPersona->getNome().' '.$EPersona->getCognome());
                 if ($EPersona->isMedico()){
                     $session->imposta_valore('medico',TRUE);
-                    $tipoUtente="Medico";
+                    $this->isMedico="Medico";
                 }
                 if ($EPersona->isPaziente()) {
                     $session->imposta_valore('paziente',TRUE);
-                    $tipoUtente="Paziente";
+                    $this->isPaziente="Paziente";
                 }
                 return TRUE;
             
@@ -93,6 +95,22 @@ class CLogin {
         }else return FALSE;
     }
     /**
+     * Verifica se è un medico
+     * 
+     * @return bool TRUE se è medico, FALSE altrimenti
+     */
+    public function isMedico() {
+        return $this->isMedico;
+    }
+    /**
+     * Verifica se è un paziente
+     * 
+     * @return bool TRUE se è paziente, FALSE altrimenti
+     */
+    public function isPaziente() {
+        return $this->isPaziente;
+    }
+    /**
      * Effettua il logout
      */
     public function logout(){
@@ -110,9 +128,9 @@ class CLogin {
      */
     public function smista(){
         $VLogin=USingleton::getInstance('VLogin');
-        $Session=USingleton::getInstance('USession');
+        $task=$VLogin->getTask();
         
-        switch ($VLogin->getTask()) {
+        switch ($task) {
             case 'LOGIN':
                 return $this->login();
                 
