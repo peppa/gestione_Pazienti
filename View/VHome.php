@@ -8,8 +8,15 @@
 
 class VHome extends View{
     
-    private $htmlCentrale;
+    
     private $boxLogin;
+    /**
+     * sono i tasti di navigazione predefiniti (home, registra paziente..)
+     *
+     * @var array $tasti_navigazione
+     */
+    private $tasti_navigazione=array();
+    
     
     public function aggiungiLogin(){
         $VLogin=  USingleton::getInstance("VLogin");

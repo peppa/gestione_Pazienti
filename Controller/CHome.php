@@ -25,13 +25,14 @@ class CHome {
         
         
         $contenutoHTML= $this->smista();//qui gli deve arrivare codice html da mettere come contenuto principale
-        var_dump($contenutoHTML);//da eliminare
+        //var_dump($contenutoHTML);//da eliminare
+        var_dump($CLogin->isMedico());
         if ($CLogin->isMedico()) { echo"io carico la pagina del medico";/*carica pag medico  */}
-        if ($CLogin->isPaziente()) {echo"io carico la pagina del paziente"; /*carica pag paziente */}
+            elseif ($CLogin->isPaziente()) {echo"io carico la pagina del paziente"; /*carica pag paziente */}
         if (!$CLogin->isAutenticato()) {
             echo"io carico la pagina del non registrato";//da eliminare
             $VHome->impostaPaginaNonRegistrato();
-        }        
+        }         
     }
     
     /**
@@ -58,6 +59,7 @@ class CHome {
         
         switch ($controllore) {
             case 'clogin':
+                echo"è partito il caso clogin dello switch su CHome";
                 $CLogin=  USingleton::getInstance('CLogin');
                 return $CLogin->smista();
 
