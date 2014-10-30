@@ -62,6 +62,10 @@ class CHome {
                 echo"è partito il caso clogin dello switch su CHome";
                 $CLogin=  USingleton::getInstance('CLogin');
                 return $CLogin->smista();
+            case 'registra':
+                echo 'è partito il caso registra dello switch su CHome';
+                $CRegistra=  USingleton::getInstance("CRegistra");
+                return $CRegistra->smista();
 
             default:
                 echo"è partito il caso di default dello switch su CHome";
